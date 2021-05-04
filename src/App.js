@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./components/Header";
+import India from "./components/India";
+import State from "./components/State";
+import World from "./components/World";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Header />
+        <h2 style={{ textAlign: "center" }}>Covid-19 Data-Sheet</h2>
+        <Switch>
+          <Route exact path="/India">
+            <India />
+          </Route>
+          <Route path="/World">
+            <World />
+          </Route>
+          <Route path="/State">
+            <State />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
