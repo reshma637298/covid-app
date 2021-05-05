@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
+import Home from "./components/Home";
 import India from "./components/India";
 import State from "./components/State";
 import World from "./components/World";
@@ -13,9 +14,11 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Header />
-        <h2 style={{ textAlign: "center" }}>Covid-19 Data-Sheet</h2>
         <Switch>
-          <Route exact path="/India">
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/India">
             <India />
           </Route>
           <Route path="/World">

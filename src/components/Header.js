@@ -9,11 +9,11 @@ class Header extends Component {
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="#">COVID-19</Navbar.Brand>
           <Nav className="mr-auto">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
             <Link to="/India" className="nav-link">
               India
-            </Link>
-            <Link to="/State" className="nav-link">
-              States
             </Link>
             <Link to="/World" className="nav-link">
               World
